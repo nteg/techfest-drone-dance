@@ -1,0 +1,94 @@
+<script type="text/javascript" src="ccv.js"></script>
+	<script type="text/javascript" src="face.js"></script>
+    <script type="text/javascript">
+        var previousrect;
+        var isDetectEnable = true;
+		var divId = 1;
+	
+        $.fn.highlight = function (rect, color) {
+		$( "#" + (divId-1).toString()).css("border","2px solid blue");
+            $("<div/>", {
+                "css": {
+                    "border": "2px solid " + color,
+                    "position": "absolute",
+                    "width": rect.width + "px",
+                    "height": rect.height + "px",
+                    "left": ($('#cam').offset().left + rect.x) + "px",
+                    "top": ($('#cam').offset().top + rect.y) + "px",
+                }
+            }).attr("id",divId).appendTo("body");
+			divId++;
+        }
+
+        $(document).ready(function () {
+            var timer = setTimeout("detectFace()", 2000);
+        });
+
+        function detectFace() {
+            if (isDetectEnable) {
+                var image = new Image();
+                image.onload = function () {
+                    /* load image, and draw it to canvas */
+                    function post(comp) {
+                        if (comp.length > 0) {
+                        MoveAfterDetection(comp[0]);
+                        previousrect = comp[0];
+                            $("cam").highlight(comp[0], "red");
+                        }
+                    }
+                    /* call main detect_objects function */
+
+                    var comp = ccv.detect_objects({ "canvas": ccv.grayscale(ccv.pre(image)),
+                        "cascade": cascade,
+                        "interval": 5,
+                        "min_neighbors": 1
+                    });
+                    post(comp);
+                };
+                image.src = $('#cam').prop('src');
+                timer = setTimeout("detectFace()", 3000);
+            }
+            else {
+                timer = setTimeout("detectFace()", 3000);
+            }
+        }
+
+        function MoveAfterDetection(rect) {
+            if (previousrect != undefined && rect != undefined) {
+                isDetectEnable = false;
+                var differneceinHorizontal = rect.x - previousrect.x;
+                var differneceinVertical = rect.y - previousrect.y;
+               $( "#" + (divId-2).toString()).remove();
+                if (differneceinVertical > 50) {
+                var actn = 'animate';
+                    $("#command_span").text("Down" + differneceinVertical);
+                    droneMotion(true, actn, 'phi30Deg', motionTimeout);
+                    //droneMotion('drone', 'stop', 3);
+                }
+                else if (differneceinVertical < -50) {
+                var actn = 'animate';
+                    $("#command_span").text("Up" + differneceinVertical);
+                    droneMotion(true, actn, 'phiM30Deg', motionTimeout);
+                    //droneMotion('drone', 'stop', 3);
+                }
+                else if (differneceinHorizontal > 50) {
+                var actn = 'animate';
+                    $("#command_span").text("Right"+differneceinHorizontal);
+                    droneMotion(true, actn, 'thetaM30Deg', motionTimeout);
+                    //droneMotion('drone', 'stop', 3);
+                }
+                else if (differneceinHorizontal < -50) {
+                var actn = 'animate';
+                    $("#command_span").text("Left" + differneceinHorizontal);
+                    droneMotion(true, actn, 'theta30Deg', motionTimeout);
+                    //droneMotion('drone', 'stop', 3);
+                }
+                isDetectEnable = true;
+            }
+        }
+
+        
+        $('#chkDetect').click(function () {
+            isDetectEnable = this.checked;
+        });
+    </script>

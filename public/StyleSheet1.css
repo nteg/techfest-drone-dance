@@ -1,0 +1,526 @@
+﻿body
+{
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+#noscale
+{
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 170px;
+}
+
+.techfestbar
+{
+    height: 40px;
+    text-align: center;
+    color: #818181;
+    font-weight: 400;
+    background-color: white;
+}
+
+.techfestbarexpanded
+{
+    text-align: center;
+    color: #818181;
+    font-weight: 900;
+    background-color: white;
+}
+
+@-webkit-keyframes techfestbaranim
+{
+    from
+    {
+        height: 40px;
+        background-color: white;
+    }
+
+    to
+    {
+        height: 600px;
+        background-color: red;
+    }
+}
+
+.controlbar
+{
+    position: fixed;
+    bottom: 0px;
+    background-color: #FFAB7B;
+    height: 100px;
+    width: 100%;
+    padding: 5px 30px;
+}
+
+.chapterbar
+{
+    top: 25px;
+    width: 100%;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.horizontalrule
+{
+    clear: both;
+    width: 100%;
+    position: absolute;
+    background-color: #c1c1c1;
+    height: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chapter
+{
+    padding: 60px 0 10px 0;
+    height: auto;
+    overflow-y: auto;
+}
+
+.chapterselection
+{
+    cursor: pointer;
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    font-weight: 900;
+    border-radius: 40px;
+    border: solid 3px #c1c1c1;
+    color: #818181;
+    position: relative;
+    background-color: #e9e9e9;
+}
+
+#chapterselection1:hover
+{
+    background-color: #FFAB7B;
+}
+
+#chapterselection2:hover
+{
+    background-color: #D0E8FF;
+}
+
+#chapterselection3:hover
+{
+    background-color: #CDFFC2;
+}
+
+.blankbar
+{
+    width: 100%;
+    height: 100px;
+}
+
+#recording
+{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    text-align: center;
+    border-radius: 100%;
+    /*border:1px solid black;*/
+    background-color: #FFC9C9;
+    /*-webkit-animation: recordingicon 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation: recordingicon 3s;
+    animation-iteration-count: infinite;*/
+}
+
+.micanimate
+{
+    -webkit-animation: recordingicon 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation: recordingicon 3s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes recordingicon
+{
+    0%
+    {
+        transform: scale(1,1);
+    }
+
+    42%
+    {
+        transform: scale(.40,.40);
+    }
+
+    67%
+    {
+        transform: scale(0.7,0.7);
+    }
+
+    100%
+    {
+        transform: scale(1,1);
+    }
+}
+
+@-webkit-keyframes recordingicon
+{
+    0%
+    {
+        -webkit-transform: scale(1,1);
+    }
+
+    42%
+    {
+        -webkit-transform: scale(.40,.40);
+    }
+
+    67%
+    {
+        -webkit-transform: scale(0.7,0.7);
+    }
+
+    100%
+    {
+        -webkit-transform: scale(1,1);
+    }
+}
+
+
+.txtbox
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px;
+    min-height: 80px;
+    text-align:center;
+    width: 40%;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px 1px #e5e5e5;
+}
+
+#mic
+{
+    padding-top: 10px;
+    position: relative;
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 33%;
+}
+
+#cam
+{
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    border: 3px #D0E8FF solid;
+    width: 743px;
+    height: 420px;
+}
+
+#chkDetect[type='checkbox']
+{
+    width: 25px;
+}
+
+
+.btn
+{
+    font-size: 18px;
+    border: 1px white solid;
+    border-radius: 5px;
+    font-family: 'Lato', serif;
+    margin: 5px;
+    min-width: 80px;
+    height: 40px;
+    padding: 3px 12px;
+    background-color: white;
+    color: #333333;
+}
+
+    .btn:hover
+    {
+        background-color: #e4e4e4;
+        border-color: #f4f4f4;
+    }
+
+.buttons
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.custombtn
+{
+    font-size: 18px;
+    border: 1px white solid;
+    border-radius: 5px;
+    font-family: 'Lato', serif;
+    margin: 5px;
+    min-width: 80px;
+    height: 40px;
+    padding: 3px 12px;
+    background-color: white;
+    color: #333333;
+}
+
+    .custombtn:hover
+    {
+        background-color: #e4e4e4;
+        border-color: #f4f4f4;
+    }
+
+
+    .Prateek, .Anubhav
+{
+    margin-left: 150px;
+}
+.Vibhor
+{
+}
+.parent
+{
+    height: 221px;
+    float: left;
+    width: 160px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #d1d1d1;
+    position: relative;
+    border-radius: 5px;
+}
+.image-description
+{
+    position: relative;
+    text-align: center;
+    top: -15%;
+    color: #515151;
+}
+.image-blur-Vibhor
+{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50%;
+    width: 100%;
+    background-image: url('Vibhor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    -webkit-filter: blur(2px) brightness(.9)sepia(.7);
+    opacity: 0.9;
+}
+
+.image-Vibhor
+{
+    border: 2px solid white;
+    top: -23%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 80px;
+    width: 80px;
+    z-index: 10;
+    -webkit-box-sizing: border-box;
+    background-image: url('Vibhor.png');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-width: 2px;
+    -webkit-color: black;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    background-position: 50% 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.image-blur-Anubhav
+{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50%;
+    width: 100%;
+    background-image: url('Anubhav.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    -webkit-filter: blur(2px) brightness(.9)sepia(.7);
+    opacity: 0.9;
+}
+
+.image-Anubhav
+{
+    border: 2px solid white;
+    top: -23%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 80px;
+    width: 80px;
+    z-index: 10;
+    -webkit-box-sizing: border-box;
+    background-image: url('Anubhav.jpg');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-width: 2px;
+    -webkit-color: black;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    background-position: 50% 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.image-blur-Prateek
+{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50%;
+    width: 100%;
+    background-image: url('Prateek.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    -webkit-filter: blur(2px) brightness(.9)sepia(.7);
+    opacity: 0.9;
+}
+
+.image-Prateek
+{
+    border: 2px solid white;
+    top: -23%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 80px;
+    width: 80px;
+    z-index: 10;
+    -webkit-box-sizing: border-box;
+    background-image: url('Prateek.jpg');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-width: 2px;
+    -webkit-color: black;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    background-position: 50% 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#authorBar
+{
+    width:780px;
+    margin:120px auto;
+    font-size:13px;
+    font-weight:400;
+}
+
+.hide
+{
+    display:none;
+}
+
+.show
+{
+    display:inherit;
+}
+
+/**
+ * Checkbox Five
+ */
+.Detect{
+    position:relative;
+    float:left;
+    font-size: medium;
+    margin-left: 10px;
+}
+.checkboxFive {
+	width: 25px;	
+    
+	position: relative;
+    float:left;
+}
+/**
+ * Create the box for the checkbox
+ */
+.checkboxFive label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 0;
+  	left: 0;
+	background: #eee;
+	border:1px solid #ddd;
+}
+
+/**
+ * Display the tick inside the checkbox
+ */
+.checkboxFive label:after {
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 7px;
+	border: 6px solid #000;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.checkboxFive label:hover::after {
+	opacity: .7;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.checkboxFive input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+#EnableDetection
+{
+margin-top:3px; 
+}
